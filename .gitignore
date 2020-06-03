@@ -1,0 +1,25 @@
+# Client Files.
+Errores.log
+Fotos/*
+Codigo/*.log
+*.vbw
+*.oca
+*.csi
+*.lvw
+*.OBJ
+Init/*
+Graficos/*
+Music/*
+Wav/*
+Mapas/*
+Ambient/*
+Comprimidos/*
+Patches/*
+
+# System Files.
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
