@@ -31,10 +31,10 @@ Public Enum resource_file_type
     Music
     Wav
     Scripts
-    Patch
     Map
     Interface
     Fuentes
+    Patch
 End Enum
 
 Private Const GRAPHIC_PATH As String = "\GRAFICOS\"
@@ -198,6 +198,7 @@ Public Sub Extract_All_Files(ByVal file_type As resource_file_type, ByVal resour
 
 On Local Error GoTo errhandler
     Select Case file_type
+    
         Case Graphics
             If UseOutputFolder Then
                 SourceFilePath = resource_path & "\Graficos" & Formato ' & OUTPUT2_PATH & "Graficos." & Formato
@@ -327,7 +328,7 @@ On Local Error GoTo errhandler
     Close SourceFile
     
     Erase InfoHead
-    MsgBox "Complete"
+    MsgBox "¡Recursos Extraidos!"
 Exit Sub
 
 errhandler:
@@ -791,7 +792,7 @@ On Local Error GoTo errhandler
     Erase InfoHead
     Erase SourceData
     
-    MsgBox "complete"
+    MsgBox "¡Recursos Comprimidos!"
 Exit Sub
 
 errhandler:
