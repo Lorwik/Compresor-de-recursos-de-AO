@@ -7,12 +7,7 @@ Codigo/*.log
 *.csi
 *.lvw
 *.OBJ
-Init/*
-Graficos/*
-Music/*
-Wav/*
-Mapas/*
-Ambient/*
+Extraidos/*
 Comprimidos/*
 Patches/*
 
