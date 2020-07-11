@@ -7,7 +7,6 @@ Codigo/*.log
 *.csi
 *.lvw
 *.OBJ
-Extraidos/*
 Comprimidos/*
 Patches/*
 
