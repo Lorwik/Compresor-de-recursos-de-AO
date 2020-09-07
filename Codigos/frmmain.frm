@@ -31,11 +31,39 @@ Begin VB.Form FrmMain
       TabIndex        =   7
       Top             =   120
       Width           =   4575
+      Begin VB.OptionButton OptRecursos 
+         Caption         =   "Minimapa"
+         Height          =   255
+         Index           =   9
+         Left            =   2400
+         TabIndex        =   22
+         Top             =   2100
+         Width           =   1575
+      End
+      Begin VB.TextBox txtSkinName 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         Height          =   285
+         Left            =   3120
+         TabIndex        =   21
+         Text            =   "Winter"
+         Top             =   1750
+         Width           =   1335
+      End
+      Begin VB.OptionButton OptRecursos 
+         Caption         =   "Skin"
+         Height          =   255
+         Index           =   8
+         Left            =   2400
+         TabIndex        =   20
+         Top             =   1760
+         Width           =   735
+      End
       Begin VB.TextBox txtVersion 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
          Height          =   285
-         Left            =   1560
+         Left            =   120
          TabIndex        =   19
          Text            =   "0"
          Top             =   2040
@@ -122,7 +150,7 @@ Begin VB.Form FrmMain
          Caption         =   "Versión:"
          ForeColor       =   &H80000008&
          Height          =   195
-         Left            =   1920
+         Left            =   120
          TabIndex        =   18
          Top             =   1800
          Width           =   585

@@ -32,6 +32,8 @@ Public Enum srcFileType
     Map
     Interface
     Fuentes
+    Skin
+    Minimap
     Patch
 End Enum
 
@@ -257,6 +259,14 @@ On Local Error GoTo errhandler
             SourceFilePath = App.Path & SrcPath & "Fuentes" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
             
+        Case Skin
+            SourceFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Formato
+            OutputFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            
+        Case Minimap
+            SourceFilePath = App.Path & SrcPath & "Minimap" & Formato
+            OutputFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            
         Case Patch
             SourceFilePath = App.Path & SrcPath & "Patch" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Patch\"
@@ -397,7 +407,7 @@ On Local Error GoTo errhandler
             OutputFilePath = App.Path & SrcPath & "Mapas" & Formato
             
         Case Interface
-            SourceFileExtension = ".jpg"
+            SourceFileExtension = ".gif"
             SourceFilePath = App.Path & "\EXTRAIDOS\Interfaces\"
             OutputFilePath = App.Path & SrcPath & "Interface" & Formato
             
@@ -406,6 +416,16 @@ On Local Error GoTo errhandler
             SourceFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
             OutputFilePath = App.Path & SrcPath & "Fuentes" & Formato
             
+        Case Skin
+            SourceFileExtension = ".gif"
+            SourceFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            OutputFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Formato
+                    
+        Case Minimap
+            SourceFileExtension = ".*"
+            SourceFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            OutputFilePath = App.Path & SrcPath & "Minimap" & Formato
+            
         Case Patch
             SourceFileExtension = ".*"
             SourceFilePath = App.Path & "\EXTRAIDOS\Parches\"
@@ -413,6 +433,7 @@ On Local Error GoTo errhandler
         
         Case Else
             Exit Function
+            
     End Select
     
     'Get first file in the directoy
@@ -586,6 +607,14 @@ On Local Error GoTo errhandler
             SourceFilePath = App.Path & SrcPath & "Fuentes" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
             
+        Case Skin
+            SourceFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Formato
+            OutputFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            
+        Case Minimap
+            SourceFilePath = App.Path & SrcPath & "Minimap" & Formato
+            OutputFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            
         Case Patch
             SourceFilePath = App.Path & SrcPath & "Patch" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Patch\"
@@ -693,6 +722,9 @@ On Local Error GoTo errhandler
                 
         Case Fuentes
                 SourceFilePath = App.Path & SrcPath & "Fuentes" & Formato
+                
+        Case Minimap
+                SourceFilePath = App.Path & SrcPath & "Minimap" & Formato
                 
         Case Else
             Exit Function

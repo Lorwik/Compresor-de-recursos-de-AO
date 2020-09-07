@@ -9,7 +9,7 @@
 9 > Haverwood
 10 > Desierto
 11 > Dungeon
-12 > Ni idea
+12 > Bosque
 13 > Belleuve
 14 > Ramx
 15 > Dungeon
@@ -18,3 +18,4 @@
 18 > Dungeon
 19 > Mar
 20 > Ni idea
+24 > Bosque Elfico
