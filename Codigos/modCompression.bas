@@ -57,7 +57,7 @@ Public Sub GenerateContra()
     Dim Contra As String
     Dim loopc As Byte
     
-    Contra = "T5lTCWm2m1rR7#SMgq!cazNv"
+    Contra = "$FlLrjB3JoliHdAPKA8&YaJR5"
     
     Erase PkContra
     
@@ -163,9 +163,9 @@ Private Sub encryptHeaderInfo(ByRef InfoHead As INFOHEADER)
     
     'Each different variable is encrypted with a different key for extra security
     With InfoHead
-        .lngFileSize = .lngFileSize Xor 341278569
-        .lngFileSizeUncompressed = .lngFileSizeUncompressed Xor 647215839
-        .lngFileStart = .lngFileStart Xor 152398467
+        .lngFileSize = .lngFileSize Xor 221872469
+        .lngFileSizeUncompressed = .lngFileSizeUncompressed Xor 447915732
+        .lngFileStart = .lngFileStart Xor 172379447
         .strFileName = EncryptedFileName
     End With
 End Sub
@@ -236,7 +236,7 @@ On Local Error GoTo errhandler
             OutputFilePath = App.Path & "\EXTRAIDOS\Graficos\"
         
         Case Music
-            SourceFilePath = App.Path & SrcPath & "Music" & Formato
+            SourceFilePath = App.Path & SrcPath & "Musica" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Musica\"
             
         Case Wav
@@ -388,8 +388,8 @@ On Local Error GoTo errhandler
         
         Case Music
             SourceFileExtension = ".mp3"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Music\"
-            OutputFilePath = App.Path & SrcPath & "Music" & Formato
+            SourceFilePath = App.Path & "\EXTRAIDOS\Musica\"
+            OutputFilePath = App.Path & SrcPath & "Musica" & Formato
             
         Case Wav
             SourceFileExtension = ".wav"
@@ -408,7 +408,7 @@ On Local Error GoTo errhandler
             
         Case Interface
             SourceFileExtension = ".gif"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Interfaces\"
+            SourceFilePath = App.Path & "\EXTRAIDOS\Interface\"
             OutputFilePath = App.Path & SrcPath & "Interface" & Formato
             
         Case Fuentes
@@ -581,10 +581,10 @@ On Local Error GoTo errhandler
             
         Case Ambient
             SourceFilePath = App.Path & SrcPath & "Ambient" & Formato
-            OutputFilePath = App.Path & "\EXTRAIDOS\Graficos\"
+            OutputFilePath = App.Path & "\EXTRAIDOS\Ambient\"
         
         Case Music
-            SourceFilePath = App.Path & SrcPath & "Music" & Formato
+            SourceFilePath = App.Path & SrcPath & "Musica" & Formato
             OutputFilePath = App.Path & "\EXTRAIDOS\Musica\"
             
         Case Wav
@@ -703,7 +703,7 @@ On Local Error GoTo errhandler
                 SourceFilePath = App.Path & SrcPath & "Graficos" & Formato
             
         Case Music
-                SourceFilePath = App.Path & SrcPath & "Musics" & Formato
+                SourceFilePath = App.Path & SrcPath & "Musica" & Formato
         
         Case Wav
                 SourceFilePath = App.Path & SrcPath & "Sounds" & Formato
