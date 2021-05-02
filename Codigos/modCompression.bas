@@ -1,9 +1,6 @@
 Attribute VB_Name = "modCompression"
 Option Explicit
 
-'Public Formato As String * 6
-Public Const Formato As String * 6 = ".WAO"
-
 Public PkContra() As Byte
 
 'This structure will describe our binary file's
@@ -45,6 +42,10 @@ Private Declare Function GetTempPath Lib "kernel32" Alias "GetTempPathA" (ByVal 
 
 Private Declare Function Compress Lib "zlib.dll" Alias "compress" (dest As Any, destLen As Any, src As Any, ByVal srcLen As Long) As Long
 Private Declare Function UnCompress Lib "zlib.dll" Alias "uncompress" (dest As Any, destLen As Any, src As Any, ByVal srcLen As Long) As Long
+
+Public Function Formato() As String
+    Formato = ".WAO"
+End Function
 
 Public Sub GenerateContra()
 '***************************************************

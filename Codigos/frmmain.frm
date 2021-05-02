@@ -1,9 +1,9 @@
 VERSION 5.00
-Object = "{55473EAC-7715-4257-B5EF-6E14EBD6A5DD}#1.0#0"; "vbalProgBar6.ocx"
 Begin VB.Form FrmMain 
-   BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Compresor WinterAO"
-   ClientHeight    =   5640
+   BackColor       =   &H00424242&
+   BorderStyle     =   4  'Fixed ToolWindow
+   Caption         =   "Compresor Comunidad Winter"
+   ClientHeight    =   5325
    ClientLeft      =   -15
    ClientTop       =   255
    ClientWidth     =   4770
@@ -11,7 +11,7 @@ Begin VB.Form FrmMain
       Name            =   "Tahoma"
       Size            =   8.25
       Charset         =   0
-      Weight          =   400
+      Weight          =   700
       Underline       =   0   'False
       Italic          =   0   'False
       Strikethrough   =   0   'False
@@ -20,124 +20,302 @@ Begin VB.Form FrmMain
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5640
+   ScaleHeight     =   5325
    ScaleWidth      =   4770
    ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
+   Begin CompresorWinter.lvButtons_H LvBCerrar 
+      Height          =   405
+      Left            =   450
+      TabIndex        =   17
+      Top             =   4830
+      Width           =   3885
+      _ExtentX        =   6853
+      _ExtentY        =   714
+      Caption         =   "Cerrar"
+      CapAlign        =   2
+      BackStyle       =   2
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      cFore           =   16777215
+      cFHover         =   16777215
+      cBhover         =   0
+      cGradient       =   0
+      Gradient        =   3
+      Mode            =   0
+      Value           =   0   'False
+      cBack           =   255
+   End
    Begin VB.Frame FraRecursos 
+      BackColor       =   &H00535353&
       Caption         =   "Recursos"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   2415
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   4
       Top             =   120
       Width           =   4575
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Minimapa"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   9
          Left            =   2400
-         TabIndex        =   22
+         TabIndex        =   3
          Top             =   2100
          Width           =   1575
       End
       Begin VB.TextBox txtSkinName 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   285
          Left            =   3120
-         TabIndex        =   21
+         TabIndex        =   16
          Text            =   "Winter"
          Top             =   1750
          Width           =   1335
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Skin"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   8
          Left            =   2400
-         TabIndex        =   20
+         TabIndex        =   15
          Top             =   1760
          Width           =   735
       End
       Begin VB.TextBox txtVersion 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   285
          Left            =   120
-         TabIndex        =   19
+         TabIndex        =   14
          Text            =   "0"
          Top             =   2040
          Width           =   1335
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Mapas"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   5
          Left            =   2400
-         TabIndex        =   16
+         TabIndex        =   12
          Top             =   1080
          Width           =   855
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Fuentes"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   7
          Left            =   2400
-         TabIndex        =   15
+         TabIndex        =   11
          Top             =   1440
          Width           =   1095
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Sonidos Ambientales"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   1
          Left            =   2400
-         TabIndex        =   14
+         TabIndex        =   10
          Top             =   360
          Width           =   2055
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Interfaces"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   6
          Left            =   120
-         TabIndex        =   13
+         TabIndex        =   9
          Top             =   1440
          Width           =   1095
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Inits"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   4
          Left            =   120
-         TabIndex        =   12
+         TabIndex        =   8
          Top             =   1080
          Width           =   1095
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Sonidos"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   3
          Left            =   2400
-         TabIndex        =   11
+         TabIndex        =   7
          Top             =   720
          Width           =   975
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Musica"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   2
          Left            =   120
-         TabIndex        =   10
+         TabIndex        =   6
          Top             =   720
          Width           =   855
       End
       Begin VB.OptionButton OptRecursos 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00535353&
          Caption         =   "Graficos"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   9
+         TabIndex        =   5
          Top             =   360
          Value           =   -1  'True
          Width           =   975
@@ -148,142 +326,169 @@ Begin VB.Form FrmMain
          BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
          Caption         =   "Versión:"
-         ForeColor       =   &H80000008&
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   120
-         TabIndex        =   18
+         TabIndex        =   13
          Top             =   1800
          Width           =   585
       End
    End
-   Begin vbalProgBarLib6.vbalProgressBar Barrita 
-      Height          =   255
-      Left            =   120
-      TabIndex        =   6
-      Top             =   4800
-      Width           =   4575
-      _ExtentX        =   8070
-      _ExtentY        =   450
-      Picture         =   "frmmain.frx":000C
-      ForeColor       =   0
-      Appearance      =   2
-      BarPicture      =   "frmmain.frx":0028
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
    Begin VB.Frame Frame3 
+      BackColor       =   &H00535353&
       Caption         =   "Parches"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00000000&
-      Height          =   735
-      Left            =   120
-      TabIndex        =   4
-      Top             =   3480
-      Width           =   4575
-      Begin VB.CommandButton cmdComprimirParche 
-         Caption         =   "Comprimir Parche"
-         Height          =   255
-         Left            =   120
-         TabIndex        =   17
-         Top             =   360
-         Width           =   1935
-      End
-      Begin VB.CommandButton Command17 
-         Caption         =   "Descomprimir Parche"
-         Height          =   255
-         Left            =   2400
-         TabIndex        =   5
-         Top             =   360
-         Width           =   2055
-      End
-   End
-   Begin VB.Frame Frame1 
-      Caption         =   "Comprension de recursos"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00FFFFFF&
       Height          =   735
       Left            =   120
       TabIndex        =   2
-      Top             =   2640
+      Top             =   3480
       Width           =   4575
-      Begin VB.CommandButton cmdDescompresion 
-         Caption         =   "Descomprimir"
-         Height          =   255
-         Left            =   2400
-         TabIndex        =   8
-         Top             =   360
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdCompresion 
-         BackColor       =   &H0000FFFF&
-         Caption         =   "Comprimir"
-         Height          =   255
+      Begin CompresorWinter.lvButtons_H cmdComprmirParche 
+         Height          =   345
          Left            =   120
-         MaskColor       =   &H0000FFFF&
-         TabIndex        =   3
-         Top             =   360
-         Width           =   1935
+         TabIndex        =   20
+         Top             =   270
+         Width           =   2265
+         _ExtentX        =   3995
+         _ExtentY        =   609
+         Caption         =   "Comprimir Parche"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin CompresorWinter.lvButtons_H cmdDesComprmirParche 
+         Height          =   345
+         Left            =   2190
+         TabIndex        =   21
+         Top             =   270
+         Width           =   2265
+         _ExtentX        =   3995
+         _ExtentY        =   609
+         Caption         =   "Descomprimir Parche"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
    End
-   Begin VB.CommandButton Command11 
-      Caption         =   "Cerrar"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   600
+   Begin VB.Frame Frame1 
+      BackColor       =   &H00535353&
+      Caption         =   "Comprension de recursos"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   735
+      Left            =   120
       TabIndex        =   1
-      Top             =   5160
-      Width           =   3615
+      Top             =   2640
+      Width           =   4575
+      Begin CompresorWinter.lvButtons_H cmdDescompresion 
+         Height          =   345
+         Left            =   2250
+         TabIndex        =   19
+         Top             =   270
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   609
+         Caption         =   "Descomprimir"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin CompresorWinter.lvButtons_H cmdCompresion 
+         Height          =   345
+         Left            =   150
+         TabIndex        =   18
+         Top             =   270
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   609
+         Caption         =   "Comprimir"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
    End
    Begin VB.Label Label1 
       Alignment       =   2  'Center
-      AutoSize        =   -1  'True
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      BorderStyle     =   1  'Fixed Single
       Caption         =   "Estado"
       BeginProperty Font 
          Name            =   "Tahoma"
-         Size            =   18
+         Size            =   14.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00FFFFFF&
       Height          =   435
-      Left            =   1800
+      Left            =   120
       TabIndex        =   0
-      Top             =   4320
-      Width           =   1245
+      Top             =   4290
+      Width           =   4575
    End
 End
 Attribute VB_Name = "FrmMain"
@@ -330,9 +535,6 @@ Private Sub cmdCompresion_Click()
         Label1.BackColor = &HFF&
     End If
     
-End Sub
-Private Sub Command11_Click()
-    End
 End Sub
 
 Private Sub cmdDescompresion_Click()
