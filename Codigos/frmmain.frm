@@ -56,15 +56,6 @@ Begin VB.Form FrmMain
    Begin VB.Frame FraRecursos 
       BackColor       =   &H00535353&
       Caption         =   "Recursos"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   2415
       Left            =   120
@@ -565,6 +556,10 @@ End Function
 
 Private Sub Form_Load()
     Call GenerateContra
+End Sub
+
+Private Sub LvBCerrar_Click()
+    End
 End Sub
 
 Private Sub OptRecursos_Click(Index As Integer)
