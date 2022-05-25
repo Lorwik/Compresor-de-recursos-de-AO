@@ -379,57 +379,57 @@ On Local Error GoTo errhandler
     Select Case File_Type
         Case Graphics
             SourceFileExtension = ".png"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Graficos\"
+            SourceFilePath = "..\shared\Graficos\"
             OutputFilePath = App.Path & SrcPath & "Graficos" & Formato
             
         Case Ambient
             SourceFileExtension = ".amb"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Ambient\"
+            SourceFilePath = "..\shared\Ambient\"
             OutputFilePath = App.Path & SrcPath & "Ambient" & Formato
         
         Case Music
             SourceFileExtension = ".mp3"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Musica\"
+            SourceFilePath = "..\shared\Musica\"
             OutputFilePath = App.Path & SrcPath & "Musica" & Formato
             
         Case Wav
             SourceFileExtension = ".wav"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Wav\"
+            SourceFilePath = "..\shared\Wav\"
             OutputFilePath = App.Path & SrcPath & "Sounds" & Formato
             
         Case Scripts
             SourceFileExtension = ".*"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Init\"
+            SourceFilePath = "..\shared\Init\"
             OutputFilePath = App.Path & SrcPath & "Scripts" & Formato
             
         Case Map
             SourceFileExtension = ".csm"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Mapas\"
+            SourceFilePath = "..\shared\Mapas\"
             OutputFilePath = App.Path & SrcPath & "Mapas" & Formato
             
         Case Interface
             SourceFileExtension = ".gif"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Interface\"
+            SourceFilePath = "..\shared\Interface\"
             OutputFilePath = App.Path & SrcPath & "Interface" & Formato
             
         Case Fuentes
             SourceFileExtension = ".*"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
+            SourceFilePath = "..\shared\Fuentes\"
             OutputFilePath = App.Path & SrcPath & "Fuentes" & Formato
             
         Case Skin
             SourceFileExtension = ".gif"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            SourceFilePath = "..\shared\Skins\" & FrmMain.txtSkinName.Text & "\"
             OutputFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Formato
                     
         Case Minimap
             SourceFileExtension = ".*"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            SourceFilePath = "..\shared\Minimapa\"
             OutputFilePath = App.Path & SrcPath & "Minimap" & Formato
             
         Case Patch
             SourceFileExtension = ".*"
-            SourceFilePath = App.Path & "\EXTRAIDOS\Parches\"
+            SourceFilePath = "..\shared\Parches\"
             OutputFilePath = App.Path & SrcPath & "Patch" & Formato
         
         Case Else
