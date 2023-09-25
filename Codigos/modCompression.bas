@@ -34,7 +34,6 @@ Public Enum srcFileType
     Patch
 End Enum
 
-Private Const SrcPath As String = "\Recursos\"
 Public Windows_Temp_Dir As String
 
 Private Declare Function GetDiskFreeSpace Lib "kernel32" Alias "GetDiskFreeSpaceExA" (ByVal lpRootPathName As String, FreeBytesToCaller As Currency, bytesTotal As Currency, FreeBytesTotal As Currency) As Long
@@ -205,6 +204,16 @@ Public Function General_Get_Temp_Dir() As String
    General_Get_Temp_Dir = IIf(c > 0, Left$(s, c), "")
 End Function
 
+'--------------------------------------------------------------------------------
+' Project    :       Compresor
+' Procedure  :       extractFiles
+' Description:       [type_description_here]
+' Created by :       Project Administrator
+' Machine    :       LORWIK
+' Date-Time  :       9/25/2023-23:44:57
+'
+' Parameters :       File_Type (srcFileType)
+'--------------------------------------------------------------------------------
 Public Function extractFiles(ByVal File_Type As srcFileType) As Boolean
 '*****************************************************************
 'Author: Juan Martín Dotuyo Dodero
@@ -219,54 +228,54 @@ Public Function extractFiles(ByVal File_Type As srcFileType) As Boolean
     Dim SourceData() As Byte
     Dim FileHead As FILEHEADER
     Dim InfoHead() As INFOHEADER
-    Dim Handle As Integer
+    Dim handle As Integer
 
 On Local Error GoTo errhandler
 
     Select Case File_Type
         Case Graphics
-            SourceFilePath = App.Path & SrcPath & "Graficos" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Graficos\"
+            SourceFilePath = SrcPath & "\Graficos" & Extension
+            OutputFilePath = OutPath & "\Graficos\"
             
         Case Ambient
-            SourceFilePath = App.Path & SrcPath & "Ambient" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Ambient\"
+            SourceFilePath = SrcPath & "\Ambient" & Extension
+            OutputFilePath = OutPath & "\Ambient\"
         
         Case Music
-            SourceFilePath = App.Path & SrcPath & "Musica" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Musica\"
+            SourceFilePath = SrcPath & "\Musica" & Extension
+            OutputFilePath = OutPath & "\Musica\"
             
         Case Wav
-            SourceFilePath = App.Path & SrcPath & "Sounds" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Wav\"
+            SourceFilePath = SrcPath & "\Sounds" & Extension
+            OutputFilePath = OutPath & "\Wav\"
             
         Case Scripts
-            SourceFilePath = App.Path & SrcPath & "Scripts" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Init\"
+            SourceFilePath = SrcPath & "\Scripts" & Extension
+            OutputFilePath = OutPath & "\Init\"
             
         Case Map
-            SourceFilePath = App.Path & SrcPath & "Mapas" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Mapas\"
+            SourceFilePath = SrcPath & "\Mapas" & Extension
+            OutputFilePath = OutPath & "\Mapas\"
             
         Case Interface
-            SourceFilePath = App.Path & SrcPath & "Interface" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Interface\"
+            SourceFilePath = SrcPath & "\Interface" & Extension
+            OutputFilePath = OutPath & "\Interface\"
             
         Case Fuentes
-            SourceFilePath = App.Path & SrcPath & "Fuentes" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
+            SourceFilePath = SrcPath & "\Fuentes" & Extension
+            OutputFilePath = OutPath & "\Fuentes\"
             
         Case Skin
-            SourceFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            SourceFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
+            OutputFilePath = OutPath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
             
         Case Minimap
-            SourceFilePath = App.Path & SrcPath & "Minimap" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            SourceFilePath = SrcPath & "\Minimap" & Extension
+            OutputFilePath = OutPath & "\Minimapa\"
             
         Case Patch
-            SourceFilePath = App.Path & SrcPath & "Patch" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Patch\"
+            SourceFilePath = SrcPath & "\Patch" & Extension
+            OutputFilePath = OutPath & "\Patch\"
         
         Case Else
             Exit Function
@@ -318,14 +327,14 @@ On Local Error GoTo errhandler
         Decompress_Data SourceData, InfoHead(loopc).lngFileSizeUncompressed
         
         'Get a free handler
-        Handle = FreeFile
+        handle = FreeFile
 
         'Create a new file and put in the data
-        Open OutputFilePath & InfoHead(loopc).strFileName For Binary As Handle
+        Open OutputFilePath & InfoHead(loopc).strFileName For Binary As handle
         
-        Put Handle, , SourceData
+        Put handle, , SourceData
         
-        Close Handle
+        Close handle
         
         Erase SourceData
         
@@ -373,63 +382,62 @@ Public Function compressFiles(ByVal File_Type As srcFileType) As Boolean
 On Local Error GoTo errhandler
 
     Dim SourcePath As String
-    SourcePath = FrmMain.dirPath.Caption
     
     Select Case File_Type
         Case Graphics
             SourceFileExtension = ".png"
             SourceFilePath = SourcePath & "\Graficos\"
-            OutputFilePath = App.Path & SrcPath & "Graficos" & Extension
+            OutputFilePath = SrcPath & "\Graficos" & Extension
             
         Case Ambient
             SourceFileExtension = ".amb"
             SourceFilePath = SourcePath & "\Ambient\"
-            OutputFilePath = App.Path & SrcPath & "Ambient" & Extension
+            OutputFilePath = SrcPath & "\Ambient" & Extension
         
         Case Music
             SourceFileExtension = ".mp3"
             SourceFilePath = SourcePath & "\Musica\"
-            OutputFilePath = App.Path & SrcPath & "Musica" & Extension
+            OutputFilePath = SrcPath & "\Musica" & Extension
             
         Case Wav
             SourceFileExtension = ".wav"
             SourceFilePath = SourcePath & "\Wav\"
-            OutputFilePath = App.Path & SrcPath & "Sounds" & Extension
+            OutputFilePath = SrcPath & "\Sounds" & Extension
             
         Case Scripts
             SourceFileExtension = ".*"
             SourceFilePath = SourcePath & "\Init\"
-            OutputFilePath = App.Path & SrcPath & "Scripts" & Extension
+            OutputFilePath = SrcPath & "\Scripts" & Extension
             
         Case Map
             SourceFileExtension = ".csm"
             SourceFilePath = SourcePath & "\Mapas\"
-            OutputFilePath = App.Path & SrcPath & "Mapas" & Extension
+            OutputFilePath = SrcPath & "\Mapas" & Extension
             
         Case Interface
             SourceFileExtension = ".gif"
             SourceFilePath = SourcePath & "\Interface\"
-            OutputFilePath = App.Path & SrcPath & "Interface" & Extension
+            OutputFilePath = SrcPath & "\Interface" & Extension
             
         Case Fuentes
             SourceFileExtension = ".*"
             SourceFilePath = SourcePath & "\Fuentes\"
-            OutputFilePath = App.Path & SrcPath & "Fuentes" & Extension
+            OutputFilePath = SrcPath & "\Fuentes" & Extension
             
         Case Skin
             SourceFileExtension = ".gif"
             SourceFilePath = SourcePath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
-            OutputFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Extension
+            OutputFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
                     
         Case Minimap
             SourceFileExtension = ".*"
             SourceFilePath = SourcePath & "\Minimapa\"
-            OutputFilePath = App.Path & SrcPath & "Minimap" & Extension
+            OutputFilePath = SrcPath & "\Minimap" & Extension
             
         Case Patch
             SourceFileExtension = ".*"
             SourceFilePath = SourcePath & "\Parches\"
-            OutputFilePath = App.Path & SrcPath & "Patch" & Extension
+            OutputFilePath = SrcPath & "\Patch" & Extension
         
         Case Else
             Exit Function
@@ -569,55 +577,55 @@ Public Function extractFile(ByVal File_Type As srcFileType, ByVal file_name As S
     
     Dim SourceData() As Byte
     Dim InfoHead As INFOHEADER
-    Dim Handle As Integer
+    Dim handle As Integer
     
 'Set up the error handler
 On Local Error GoTo errhandler
     
     Select Case File_Type
         Case Graphics
-            SourceFilePath = App.Path & SrcPath & "Graficos" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Graficos\"
+            SourceFilePath = SrcPath & "\Graficos" & Extension
+            OutputFilePath = OutPath & "\Graficos\"
             
         Case Ambient
-            SourceFilePath = App.Path & SrcPath & "Ambient" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Ambient\"
+            SourceFilePath = SrcPath & "\Ambient" & Extension
+            OutputFilePath = OutPath & "\Ambient\"
         
         Case Music
-            SourceFilePath = App.Path & SrcPath & "Musica" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Musica\"
+            SourceFilePath = SrcPath & "\Musica" & Extension
+            OutputFilePath = OutPath & "\Musica\"
             
         Case Wav
-            SourceFilePath = App.Path & SrcPath & "Sounds" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Wav\"
+            SourceFilePath = SrcPath & "\Sounds" & Extension
+            OutputFilePath = OutPath & "\Wav\"
             
         Case Scripts
-            SourceFilePath = App.Path & SrcPath & "Scripts" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Init\"
+            SourceFilePath = SrcPath & "\Scripts" & Extension
+            OutputFilePath = OutPath & "\Init\"
             
         Case Map
-            SourceFilePath = App.Path & SrcPath & "Mapas" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Mapas\"
+            SourceFilePath = SrcPath & "\Mapas" & Extension
+            OutputFilePath = OutPath & "\Mapas\"
             
         Case Interface
-            SourceFilePath = App.Path & SrcPath & "Interface" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Interface\"
+            SourceFilePath = SrcPath & "\Interface" & Extension
+            OutputFilePath = OutPath & "\Interface\"
             
         Case Fuentes
-            SourceFilePath = App.Path & SrcPath & "Fuentes" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Fuentes\"
+            SourceFilePath = SrcPath & "\Fuentes" & Extension
+            OutputFilePath = OutPath & "\Fuentes\"
             
         Case Skin
-            SourceFilePath = App.Path & SrcPath & FrmMain.txtSkinName.Text & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Skins\" & FrmMain.txtSkinName.Text & "\"
+            SourceFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
+            OutputFilePath = OutPath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
             
         Case Minimap
-            SourceFilePath = App.Path & SrcPath & "Minimap" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Minimapa\"
+            SourceFilePath = SrcPath & "\Minimap" & Extension
+            OutputFilePath = OutPath & "\Minimapa\"
             
         Case Patch
-            SourceFilePath = App.Path & SrcPath & "Patch" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Patch\"
+            SourceFilePath = SrcPath & "\Patch" & Extension
+            OutputFilePath = OutPath & "\Patch\"
         
         Case Else
             Exit Function
@@ -632,8 +640,8 @@ On Local Error GoTo errhandler
     If InfoHead.strFileName = "" Or InfoHead.lngFileSize = 0 Then Exit Function
 
     'Open the binary file
-    Handle = FreeFile
-    Open SourceFilePath For Binary Access Read Lock Write As Handle
+    handle = FreeFile
+    Open SourceFilePath For Binary Access Read Lock Write As handle
     
     'Check the file for validity
     'If LOF(handle) <> InfoHead.lngFileSize Then
@@ -644,7 +652,7 @@ On Local Error GoTo errhandler
     
     'Make sure there is enough space in the HD
     If InfoHead.lngFileSizeUncompressed > General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
-        Close Handle
+        Close handle
         MsgBox "There is not enough drive space to extract the compressed file.", , "Error"
         Exit Function
     End If
@@ -655,22 +663,22 @@ On Local Error GoTo errhandler
     ReDim SourceData(InfoHead.lngFileSize - 1)
     
     'Get the data
-    Get Handle, InfoHead.lngFileStart, SourceData
+    Get handle, InfoHead.lngFileStart, SourceData
     
     'Decompress all data
     Decompress_Data SourceData, InfoHead.lngFileSizeUncompressed
     
     'Close the binary file
-    Close Handle
+    Close handle
     
     'Get a free handler
-    Handle = FreeFile
+    handle = FreeFile
     
-    Open OutputFilePath & InfoHead.strFileName For Binary As Handle
+    Open OutputFilePath & InfoHead.strFileName For Binary As handle
     
-    Put Handle, 1, SourceData
+    Put handle, 1, SourceData
     
-    Close Handle
+    Close handle
     
     Erase SourceData
         
@@ -678,7 +686,7 @@ On Local Error GoTo errhandler
 Exit Function
 
 errhandler:
-    Close Handle
+    Close handle
     Erase SourceData
     'Display an error message if it didn't work
     'MsgBox "Unable to decode binary file. Reason: " & Err.number & " : " & Err.Description, vbOKOnly, "Error"
@@ -694,37 +702,37 @@ Public Function Extract_File_Memory(ByVal File_Type As srcFileType, ByVal file_n
     Dim loopc As Long
     Dim SourceFilePath As String
     Dim InfoHead As INFOHEADER
-    Dim Handle As Integer
+    Dim handle As Integer
    
 On Local Error GoTo errhandler
    
     Select Case File_Type
         Case Graphics
-                SourceFilePath = App.Path & SrcPath & "Graficos" & Extension
+                SourceFilePath = SrcPath & "\Graficos" & Extension
             
         Case Music
-                SourceFilePath = App.Path & SrcPath & "Musica" & Extension
+                SourceFilePath = SrcPath & "\Musica" & Extension
         
         Case Wav
-                SourceFilePath = App.Path & SrcPath & "Sounds" & Extension
+                SourceFilePath = SrcPath & "\Sounds" & Extension
 
         Case Scripts
-                SourceFilePath = App.Path & SrcPath & "Scripts" & Extension
+                SourceFilePath = SrcPath & "\Scripts" & Extension
 
         Case Interface
-                SourceFilePath = App.Path & SrcPath & "Interface" & Extension
+                SourceFilePath = SrcPath & "\Interface" & Extension
 
         Case Map
-                SourceFilePath = App.Path & SrcPath & "Mapas" & Extension
+                SourceFilePath = SrcPath & "\Mapas" & Extension
 
         Case Ambient
-                SourceFilePath = App.Path & SrcPath & "Ambient" & Extension
+                SourceFilePath = SrcPath & "\Ambient" & Extension
                 
         Case Fuentes
-                SourceFilePath = App.Path & SrcPath & "Fuentes" & Extension
+                SourceFilePath = SrcPath & "\Fuentes" & Extension
                 
         Case Minimap
-                SourceFilePath = App.Path & SrcPath & "Minimap" & Extension
+                SourceFilePath = SrcPath & "\Minimap" & Extension
                 
         Case Else
             Exit Function
@@ -734,11 +742,11 @@ On Local Error GoTo errhandler
    
     If InfoHead.strFileName = "" Or InfoHead.lngFileSize = 0 Then Exit Function
  
-    Handle = FreeFile
-    Open SourceFilePath For Binary Access Read Lock Write As Handle
+    handle = FreeFile
+    Open SourceFilePath For Binary Access Read Lock Write As handle
    
     If InfoHead.lngFileSizeUncompressed > General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
-        Close Handle
+        Close handle
         MsgBox "There is not enough drive space to extract the compressed file.", , "Error"
         Exit Function
     End If
@@ -746,15 +754,15 @@ On Local Error GoTo errhandler
    
     ReDim SourceData(InfoHead.lngFileSize - 1)
    
-    Get Handle, InfoHead.lngFileStart, SourceData
+    Get handle, InfoHead.lngFileStart, SourceData
         Decompress_Data SourceData, InfoHead.lngFileSizeUncompressed
-    Close Handle
+    Close handle
        
     Extract_File_Memory = True
 Exit Function
  
 errhandler:
-    Close Handle
+    Close handle
     Erase SourceData
 End Function
 
@@ -765,21 +773,21 @@ Public Sub DeleteFile(ByVal file_path As String)
 'Deletes a resource files
 '*****************************************************************
 
-    Dim Handle As Integer
+    Dim handle As Integer
     Dim Data() As Byte
     
     On Error GoTo ERROR_HANDLER
     
     'We open the file to delete
-    Handle = FreeFile
-    Open file_path For Binary Access Write Lock Read As Handle
+    handle = FreeFile
+    Open file_path For Binary Access Write Lock Read As handle
     
     'We replace all the bytes in it with 0s
-    ReDim Data(LOF(Handle) - 1)
-    Put Handle, 1, Data
+    ReDim Data(LOF(handle) - 1)
+    Put handle, 1, Data
     
     'We close the file
-    Close Handle
+    Close handle
     
     'Now we delete it, knowing that if they retrieve it (some antivirus may create backup copies of deleted files), it will be useless
     Kill file_path
