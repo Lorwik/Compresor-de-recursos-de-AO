@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form FrmMain 
    BackColor       =   &H00424242&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Compresor ComunidadWinter"
+   Caption         =   "Compresor PAK"
    ClientHeight    =   6780
    ClientLeft      =   -15
    ClientTop       =   255
@@ -97,7 +97,7 @@ Begin VB.Form FrmMain
          Height          =   285
          Left            =   5160
          TabIndex        =   16
-         Text            =   "Winter"
+         Text            =   "United"
          Top             =   1750
          Width           =   1335
       End
