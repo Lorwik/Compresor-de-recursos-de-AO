@@ -230,7 +230,7 @@ On Local Error GoTo errhandler
             
         Case Ambient
             SourceFilePath = App.Path & SrcPath & "Ambient" & Extension
-            OutputFilePath = App.Path & "\EXTRAIDOS\Graficos\"
+            OutputFilePath = App.Path & "\EXTRAIDOS\Ambient\"
         
         Case Music
             SourceFilePath = App.Path & SrcPath & "Musica" & Extension

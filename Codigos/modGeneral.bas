@@ -1,7 +1,7 @@
 Attribute VB_Name = "modGeneral"
 Option Explicit
 
-Public Const Extension = ".PAK"
+Public Const Extension = ".WAO"
 Public Const PasswordResources = "$FlLrjB3JoliHdAPKA8&YaJR5"
 
 
