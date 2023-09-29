@@ -5,7 +5,7 @@ Begin VB.Form FrmMain
    Caption         =   "Compresor ComunidadWinter"
    ClientHeight    =   5370
    ClientLeft      =   -15
-   ClientTop       =   255
+   ClientTop       =   555
    ClientWidth     =   7470
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -29,20 +29,28 @@ Begin VB.Form FrmMain
       TabIndex        =   17
       Top             =   4830
       Width           =   7245
-      _extentx        =   12779
-      _extenty        =   714
-      caption         =   "Cerrar"
-      capalign        =   2
-      backstyle       =   2
-      font            =   "frmmain.frx":10CA
-      cfore           =   16777215
-      cfhover         =   16777215
-      cbhover         =   0
-      cgradient       =   0
-      gradient        =   3
-      mode            =   0
-      value           =   0   'False
-      cback           =   255
+      _ExtentX        =   12779
+      _ExtentY        =   714
+      Caption         =   "Cerrar"
+      CapAlign        =   2
+      BackStyle       =   2
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      cFore           =   16777215
+      cFHover         =   16777215
+      cBhover         =   0
+      cGradient       =   0
+      Gradient        =   3
+      Mode            =   0
+      Value           =   0   'False
+      cBack           =   255
    End
    Begin VB.Frame FraRecursos 
       BackColor       =   &H00535353&
@@ -340,17 +348,25 @@ Begin VB.Form FrmMain
          TabIndex        =   20
          Top             =   270
          Width           =   3705
-         _extentx        =   6535
-         _extenty        =   609
-         caption         =   "Comprimir Parche"
-         capalign        =   2
-         backstyle       =   2
-         shape           =   2
-         font            =   "frmmain.frx":10F2
-         cgradient       =   0
-         mode            =   0
-         value           =   0   'False
-         cback           =   -2147483633
+         _ExtentX        =   6535
+         _ExtentY        =   609
+         Caption         =   "Comprimir Parche"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
       Begin Compresor.lvButtons_H cmdDesComprmirParche 
          Height          =   345
@@ -358,17 +374,25 @@ Begin VB.Form FrmMain
          TabIndex        =   21
          Top             =   240
          Width           =   3465
-         _extentx        =   6112
-         _extenty        =   609
-         caption         =   "Descomprimir Parche"
-         capalign        =   2
-         backstyle       =   2
-         shape           =   1
-         font            =   "frmmain.frx":111A
-         cgradient       =   0
-         mode            =   0
-         value           =   0   'False
-         cback           =   -2147483633
+         _ExtentX        =   6112
+         _ExtentY        =   609
+         Caption         =   "Descomprimir Parche"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
    End
    Begin VB.Frame Frame1 
@@ -386,17 +410,25 @@ Begin VB.Form FrmMain
          TabIndex        =   19
          Top             =   240
          Width           =   3615
-         _extentx        =   6376
-         _extenty        =   609
-         caption         =   "Descomprimir"
-         capalign        =   2
-         backstyle       =   2
-         shape           =   1
-         font            =   "frmmain.frx":1142
-         cgradient       =   0
-         mode            =   0
-         value           =   0   'False
-         cback           =   -2147483633
+         _ExtentX        =   6376
+         _ExtentY        =   609
+         Caption         =   "Descomprimir"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
       Begin Compresor.lvButtons_H cmdCompresion 
          Height          =   345
@@ -404,17 +436,25 @@ Begin VB.Form FrmMain
          TabIndex        =   18
          Top             =   270
          Width           =   3495
-         _extentx        =   6165
-         _extenty        =   609
-         caption         =   "Comprimir"
-         capalign        =   2
-         backstyle       =   2
-         shape           =   2
-         font            =   "frmmain.frx":116A
-         cgradient       =   0
-         mode            =   0
-         value           =   0   'False
-         cback           =   -2147483633
+         _ExtentX        =   6165
+         _ExtentY        =   609
+         Caption         =   "Comprimir"
+         CapAlign        =   2
+         BackStyle       =   2
+         Shape           =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
    End
    Begin VB.Label Label1 
@@ -439,6 +479,9 @@ Begin VB.Form FrmMain
       TabIndex        =   0
       Top             =   4350
       Width           =   7215
+   End
+   Begin VB.Menu mnucambiarrutas 
+      Caption         =   "Cambiar rutas"
    End
 End
 Attribute VB_Name = "FrmMain"
@@ -515,6 +558,10 @@ End Function
 
 Private Sub LvBCerrar_Click()
     End
+End Sub
+
+Private Sub mnucambiarrutas_Click()
+    frmConfig.Show
 End Sub
 
 Private Sub OptRecursos_Click(Index As Integer)

@@ -380,63 +380,61 @@ Public Function compressFiles(ByVal File_Type As srcFileType) As Boolean
     
 'Set up the error handler
 On Local Error GoTo errhandler
-
-    Dim SourcePath As String
     
     Select Case File_Type
         Case Graphics
             SourceFileExtension = ".png"
-            SourceFilePath = SourcePath & "\Graficos\"
+            SourceFilePath = OutPath & "\Graficos\"
             OutputFilePath = SrcPath & "\Graficos" & Extension
             
         Case Ambient
             SourceFileExtension = ".amb"
-            SourceFilePath = SourcePath & "\Ambient\"
+            SourceFilePath = OutPath & "\Ambient\"
             OutputFilePath = SrcPath & "\Ambient" & Extension
         
         Case Music
             SourceFileExtension = ".mp3"
-            SourceFilePath = SourcePath & "\Musica\"
+            SourceFilePath = OutPath & "\Musica\"
             OutputFilePath = SrcPath & "\Musica" & Extension
             
         Case Wav
             SourceFileExtension = ".wav"
-            SourceFilePath = SourcePath & "\Wav\"
+            SourceFilePath = OutPath & "\Wav\"
             OutputFilePath = SrcPath & "\Sounds" & Extension
             
         Case Scripts
             SourceFileExtension = ".*"
-            SourceFilePath = SourcePath & "\Init\"
+            SourceFilePath = OutPath & "\Init\"
             OutputFilePath = SrcPath & "\Scripts" & Extension
             
         Case Map
             SourceFileExtension = ".csm"
-            SourceFilePath = SourcePath & "\Mapas\"
+            SourceFilePath = OutPath & "\Mapas\"
             OutputFilePath = SrcPath & "\Mapas" & Extension
             
         Case Interface
             SourceFileExtension = ".gif"
-            SourceFilePath = SourcePath & "\Interface\"
+            SourceFilePath = OutPath & "\Interface\"
             OutputFilePath = SrcPath & "\Interface" & Extension
             
         Case Fuentes
             SourceFileExtension = ".*"
-            SourceFilePath = SourcePath & "\Fuentes\"
+            SourceFilePath = OutPath & "\Fuentes\"
             OutputFilePath = SrcPath & "\Fuentes" & Extension
             
         Case Skin
             SourceFileExtension = ".gif"
-            SourceFilePath = SourcePath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
+            SourceFilePath = OutPath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
             OutputFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
                     
         Case Minimap
             SourceFileExtension = ".*"
-            SourceFilePath = SourcePath & "\Minimapa\"
+            SourceFilePath = OutPath & "\Minimapa\"
             OutputFilePath = SrcPath & "\Minimap" & Extension
             
         Case Patch
             SourceFileExtension = ".*"
-            SourceFilePath = SourcePath & "\Parches\"
+            SourceFilePath = OutPath & "\Parches\"
             OutputFilePath = SrcPath & "\Patch" & Extension
         
         Case Else
