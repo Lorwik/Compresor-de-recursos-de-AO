@@ -388,7 +388,7 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Graficos" & Extension
             
         Case Ambient
-            SourceFileExtension = ".amb"
+            SourceFileExtension = ".wav"
             SourceFilePath = OutPath & "\Ambient\"
             OutputFilePath = SrcPath & "\Ambient" & Extension
         
