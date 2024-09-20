@@ -251,7 +251,7 @@ On Local Error GoTo errhandler
             
         Case Scripts
             SourceFilePath = SrcPath & "\Scripts" & Extension
-            OutputFilePath = OutPath & "\Init\"
+            OutputFilePath = OutPath & "\Scripts\"
             
         Case Map
             SourceFilePath = SrcPath & "\Mapas" & Extension
@@ -266,7 +266,7 @@ On Local Error GoTo errhandler
             OutputFilePath = OutPath & "\Fuentes\"
             
         Case Skin
-            SourceFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
+            SourceFilePath = SrcPath & "\Skins\" & FrmMain.txtSkinName.Text & Extension
             OutputFilePath = OutPath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
             
         Case Minimap
@@ -404,7 +404,7 @@ On Local Error GoTo errhandler
             
         Case Scripts
             SourceFileExtension = ".*"
-            SourceFilePath = OutPath & "\Init\"
+            SourceFilePath = OutPath & "\Scripts\"
             OutputFilePath = SrcPath & "\Scripts" & Extension
             
         Case Map
@@ -413,7 +413,7 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Mapas" & Extension
             
         Case Interface
-            SourceFileExtension = ".gif"
+            SourceFileExtension = ".bmp"
             SourceFilePath = OutPath & "\Interface\"
             OutputFilePath = SrcPath & "\Interface" & Extension
             
@@ -423,9 +423,9 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Fuentes" & Extension
             
         Case Skin
-            SourceFileExtension = ".gif"
+            SourceFileExtension = ".bmp"
             SourceFilePath = OutPath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
-            OutputFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
+            OutputFilePath = SrcPath & "\Skins\" & FrmMain.txtSkinName.Text & Extension
                     
         Case Minimap
             SourceFileExtension = ".*"

@@ -3,7 +3,7 @@ Begin VB.Form FrmMain
    BackColor       =   &H00424242&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Compresor ComunidadWinter"
-   ClientHeight    =   5370
+   ClientHeight    =   5250
    ClientLeft      =   -15
    ClientTop       =   555
    ClientWidth     =   7470
@@ -20,14 +20,14 @@ Begin VB.Form FrmMain
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5370
+   ScaleHeight     =   5250
    ScaleWidth      =   7470
    StartUpPosition =   1  'CenterOwner
    Begin Compresor.lvButtons_H LvBCerrar 
       Height          =   405
-      Left            =   120
+      Left            =   90
       TabIndex        =   17
-      Top             =   4830
+      Top             =   4800
       Width           =   7245
       _ExtentX        =   12779
       _ExtentY        =   714
@@ -59,7 +59,7 @@ Begin VB.Form FrmMain
       Height          =   2415
       Left            =   120
       TabIndex        =   4
-      Top             =   150
+      Top             =   180
       Width           =   7215
       Begin VB.OptionButton OptRecursos 
          Appearance      =   0  'Flat
@@ -135,10 +135,10 @@ Begin VB.Form FrmMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   120
+         Left            =   780
          TabIndex        =   14
          Text            =   "0"
-         Top             =   2040
+         Top             =   1830
          Width           =   1335
       End
       Begin VB.OptionButton OptRecursos 
@@ -327,9 +327,9 @@ Begin VB.Form FrmMain
          EndProperty
          ForeColor       =   &H00FFFFFF&
          Height          =   195
-         Left            =   120
+         Left            =   150
          TabIndex        =   13
-         Top             =   1800
+         Top             =   1860
          Width           =   585
       End
    End
@@ -340,7 +340,7 @@ Begin VB.Form FrmMain
       Height          =   735
       Left            =   120
       TabIndex        =   2
-      Top             =   3510
+      Top             =   3480
       Width           =   7215
       Begin Compresor.lvButtons_H cmdComprmirParche 
          Height          =   345
@@ -408,7 +408,7 @@ Begin VB.Form FrmMain
          Height          =   345
          Left            =   3480
          TabIndex        =   19
-         Top             =   240
+         Top             =   270
          Width           =   3615
          _ExtentX        =   6376
          _ExtentY        =   609
@@ -432,7 +432,7 @@ Begin VB.Form FrmMain
       End
       Begin Compresor.lvButtons_H cmdCompresion 
          Height          =   345
-         Left            =   120
+         Left            =   150
          TabIndex        =   18
          Top             =   270
          Width           =   3495
@@ -475,9 +475,9 @@ Begin VB.Form FrmMain
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   435
-      Left            =   120
+      Left            =   90
       TabIndex        =   0
-      Top             =   4350
+      Top             =   4320
       Width           =   7215
    End
    Begin VB.Menu mnucambiarrutas 
